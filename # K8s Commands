@@ -1,6 +1,6 @@
 # K8s Commands
 
-###################################################3
+###################################################
 General commands
 ##########################
 
@@ -22,8 +22,7 @@ Kubectl run -h # to get list of subcommands
 
 kubectl get <object e.g pod, deployment, service etc ...> -A # Get all object resources accross all namespaces in your cluster
 
-kubectl get all # To list all objects within the default namespace else add namespace (-n <name-of-namespace>) to list all objects within a specific namespace 
-
+kubectl get all # To list all objects within the default namespace else add namespace (-n <name-of-namespace>) to list all objects within a specific namespace
 
 #################################################
 K8s PODS
@@ -77,7 +76,6 @@ kubectl replace -f <file name> # To update replicaset file in case you changed n
 
 kubectl scale --replicas=<number> replicaset <name of replicaset>
 
-
 ##############################################
 Deployments
 ##############################################
@@ -92,11 +90,9 @@ kubectl apply -f <file name> # To update deployment manifest file in case you ch
 
 kubectl rollout undo deploy <name of deployment> # To undo the deployment nad rollback to the previous version
 
-kubectl delete deploy <name of deployment> # delete deployment 
+kubectl delete deploy <name of deployment> # delete deployment
 
-
-
-###########################################
+##########################################
 Services
 #############################################
 
@@ -104,9 +100,12 @@ kubectl port-forward service/my-app 8080:80 # To port forward your service so yo
 
 minikube service my-app --url # Specific to minikube only. Used to get the url to access your app running on localhost
 
-
 ###########################################
 kubeconfig
 ###########################################
 
 K config current-context #Display the current-context
+
+k get po --watch # show how our application is deploying
+
+# Question: How do you troubleshoot using your Kubernetes pods that is not running. Answer: It is either using the logs ( k logs) or k describe pod (name of the pod)
